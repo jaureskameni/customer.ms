@@ -1,0 +1,19 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: customer-service
+  datasource:
+    mongodb:
+      host: localhost
+      port: ${DB_PORT}
+      database: ${DB_NAME}
+      authentication-database: ${DB_AUTH}
+      username: ${DB_USERNAME}
+      password: ${DB_PASSWORD}
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${EUREKA_HOST}:${EUREKA_PORT}/${EUREKA_NAME}/
+  instance:
+    prefer-ip-address: true
